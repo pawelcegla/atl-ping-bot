@@ -64,6 +64,4 @@ requests.post('https://{}/rest/api/3/issue/{}/transitions'.format(url, create_is
         'transition': {
             'id':transition
         }})
-webhook, = cur.execute('select * from webhook').fetchone()
-requests.post(webhook, json={'content':'https://{}/browse/{} & {}{}'.format(url, create_issue_res['key'], create_page_res['_links']['base'], create_page_res['_links']['webui'])})
 con.close()
